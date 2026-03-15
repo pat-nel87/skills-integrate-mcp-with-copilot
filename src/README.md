@@ -5,7 +5,8 @@ A super simple FastAPI application that allows students to view and sign up for 
 ## Features
 
 - View all available extracurricular activities
-- Sign up for activities
+- Teacher-only sign up and unregister for activities
+- Teacher login and logout from the UI
 
 ## Getting Started
 
@@ -48,3 +49,10 @@ The application uses a simple data model with meaningful identifiers:
    - Grade level
 
 All data is stored in memory, which means data will be reset when the server restarts.
+
+## Teacher Authentication
+
+Teachers can log in using credentials stored in `src/teachers.json`.
+
+- Only logged-in teachers can register or unregister students.
+- Non-logged-in users can still view activity participants.
