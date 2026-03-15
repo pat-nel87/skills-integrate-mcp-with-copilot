@@ -8,8 +8,20 @@
   </head>
   <body>
     <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+      <div class="header-top">
+        <div>
+          <h1>Mergington High School</h1>
+          <h2>Extracurricular Activities</h2>
+        </div>
+        <div id="auth-controls" class="auth-controls">
+          <button id="user-menu-btn" type="button" class="secondary-btn">User</button>
+          <div id="user-menu" class="user-menu hidden">
+            <p id="auth-status-text" class="small-text">Not logged in</p>
+            <button id="open-login-btn" type="button">Teacher Login</button>
+            <button id="logout-btn" type="button" class="hidden">Logout</button>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main>
@@ -22,7 +34,8 @@
       </section>
 
       <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+        <h3>Register a Student (Teachers Only)</h3>
+        <p id="signup-locked-text" class="info-text hidden">Please log in as a teacher to register or unregister students.</p>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
@@ -40,6 +53,26 @@
         <div id="message" class="hidden"></div>
       </section>
     </main>
+
+    <div id="login-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="login-title">
+      <div class="modal-content">
+        <h3 id="login-title">Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="teacher-username">Username:</label>
+            <input type="text" id="teacher-username" required />
+          </div>
+          <div class="form-group">
+            <label for="teacher-password">Password:</label>
+            <input type="password" id="teacher-password" required />
+          </div>
+          <div class="modal-actions">
+            <button type="submit">Login</button>
+            <button type="button" id="close-login-btn" class="secondary-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <footer>
       <p>&copy; 2023 Mergington High School</p>
